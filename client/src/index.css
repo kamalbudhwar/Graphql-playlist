@@ -1,0 +1,9 @@
+body {
+  background-color: rgb(247, 213, 213);
+  font-family: "Nunito SemiBold";
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
