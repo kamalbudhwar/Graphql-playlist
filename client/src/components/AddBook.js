@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { gql, useQuery,useMutation} from "@apollo/client";
-import { getAuthorsQuery,addBookMutation} from "../queries/queries";
+import { getAuthorsQuery,addBookMutation, getBooksQuery} from "../queries/queries";
 
 function AddBook(props) {
   const { loading, error, data } = useQuery(getAuthorsQuery);
@@ -23,7 +23,7 @@ function AddBook(props) {
 
   const submitForm = (e) => {
       e.preventDefault();
-      addBook({variables:{name:bookName,genre:bookGenre,authorId:authorId}});
+      addBook({variables:{name:bookName,genre:bookGenre,authorId:authorId},refetchQueries:[{query:getBooksQuery}]})
   }
 
   return (
